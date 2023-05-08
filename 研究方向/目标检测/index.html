@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>✧ 小样本目标检测（Few-shot Object Detection）-&gt; 陈泰岳 | 🧐 Happy Learning~</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="志不求易 事不避难">
+    
+    <link rel="preload" href="/assets/css/0.styles.12a5e117.css" as="style"><link rel="preload" href="/assets/js/app.350eff9c.js" as="script"><link rel="preload" href="/assets/js/2.229db3ab.js" as="script"><link rel="preload" href="/assets/js/19.f783cac7.js" as="script"><link rel="prefetch" href="/assets/js/10.32a715c7.js"><link rel="prefetch" href="/assets/js/11.7d73bbf3.js"><link rel="prefetch" href="/assets/js/12.c8bb42b8.js"><link rel="prefetch" href="/assets/js/13.a7254e46.js"><link rel="prefetch" href="/assets/js/14.aa8104b0.js"><link rel="prefetch" href="/assets/js/15.06f4cb06.js"><link rel="prefetch" href="/assets/js/16.520f362e.js"><link rel="prefetch" href="/assets/js/17.ea91fb99.js"><link rel="prefetch" href="/assets/js/18.5cae1952.js"><link rel="prefetch" href="/assets/js/3.d3517b74.js"><link rel="prefetch" href="/assets/js/4.d4191332.js"><link rel="prefetch" href="/assets/js/5.6b506a6c.js"><link rel="prefetch" href="/assets/js/6.718a9b33.js"><link rel="prefetch" href="/assets/js/7.72686444.js"><link rel="prefetch" href="/assets/js/8.b67fa1b6.js"><link rel="prefetch" href="/assets/js/9.ef02d15a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.12a5e117.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">🧐 Happy Learning~</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="polaris" class="dropdown-title"><span class="title">polaris</span> <span class="arrow down"></span></button> <button type="button" aria-label="polaris" class="mobile-dropdown-title"><span class="title">polaris</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/polaris/" class="nav-link">
+  Polaris
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="不完全指北" class="dropdown-title"><span class="title">不完全指北</span> <span class="arrow down"></span></button> <button type="button" aria-label="不完全指北" class="mobile-dropdown-title"><span class="title">不完全指北</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/不完全指北/" class="nav-link">
+  不完全指北
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="研究方向" class="dropdown-title"><span class="title">研究方向</span> <span class="arrow down"></span></button> <button type="button" aria-label="研究方向" class="mobile-dropdown-title"><span class="title">研究方向</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/研究方向/异常检测/" class="nav-link">
+  异常检测
+</a></li><li class="dropdown-item"><!----> <a href="/研究方向/目标检测/" class="nav-link">
+  目标检测
+</a></li><li class="dropdown-item"><!----> <a href="/研究方向/" class="nav-link">
+  研究方向
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="polaris" class="dropdown-title"><span class="title">polaris</span> <span class="arrow down"></span></button> <button type="button" aria-label="polaris" class="mobile-dropdown-title"><span class="title">polaris</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/polaris/" class="nav-link">
+  Polaris
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="不完全指北" class="dropdown-title"><span class="title">不完全指北</span> <span class="arrow down"></span></button> <button type="button" aria-label="不完全指北" class="mobile-dropdown-title"><span class="title">不完全指北</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/不完全指北/" class="nav-link">
+  不完全指北
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="研究方向" class="dropdown-title"><span class="title">研究方向</span> <span class="arrow down"></span></button> <button type="button" aria-label="研究方向" class="mobile-dropdown-title"><span class="title">研究方向</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/研究方向/异常检测/" class="nav-link">
+  异常检测
+</a></li><li class="dropdown-item"><!----> <a href="/研究方向/目标检测/" class="nav-link">
+  目标检测
+</a></li><li class="dropdown-item"><!----> <a href="/研究方向/" class="nav-link">
+  研究方向
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>目标检测</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" aria-current="page" class="active sidebar-link">✧ 小样本目标检测（Few-shot Object Detection）-&gt; 陈泰岳</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="✧-小样本目标检测-few-shot-object-detection-陈泰岳"><a href="#✧-小样本目标检测-few-shot-object-detection-陈泰岳" class="header-anchor">#</a> ✧ 小样本目标检测（Few-shot Object Detection）-&gt; <code>陈泰岳</code></h1> <h4 id="论文汇总-论文汇总链接-例如github上的-awesome-系列"><a href="#论文汇总-论文汇总链接-例如github上的-awesome-系列" class="header-anchor">#</a> 论文汇总：论文汇总链接，例如GitHub上的 <code>Awesome</code> 系列</h4> <h5 id="➢-推荐综述"><a href="#➢-推荐综述" class="header-anchor">#</a> ➢ 推荐综述</h5> <p>[1] 【发表于】【年份】【论文名】【团队名】【论文链接】【代码链接】【简介】<br>
+[2] 【知乎/微信/博客等网页链接】【内容简介】</p> <h5 id="➢-优秀团队-学术大佬"><a href="#➢-优秀团队-学术大佬" class="header-anchor">#</a> ➢ 优秀团队 / 学术大佬</h5> <p>■ 【团队名】【团队链接】【所属机构】【细化方向】<br>
+[1] 【代表论文】<br>
+■ 【大佬名】【个人主页】【所属机构】【细化方向】<br>
+[1] 【代表论文】</p> <h5 id="➢-经典论文-推荐加-👍"><a href="#➢-经典论文-推荐加-👍" class="header-anchor">#</a> ➢ 经典论文：（推荐加“👍”）</h5> <p>[1] 【发表于】【年份】【论文名】【团队名】【论文链接】【代码链接】【简介】<br>
+[2] 👍【发表于】【年份】【论文名】【团队名】【论文链接】【代码链接】【简介】</p> <h5 id="➢-经典项目"><a href="#➢-经典项目" class="header-anchor">#</a> ➢ 经典项目</h5> <p>○ 【名称】【链接】【简介】</p> <blockquote><p>参考文档：</p> <ol><li>【在iiplab做科研】 <a href="https://docs.qq.com/pdf/DR3NNa2xqU0Rld1B2" target="_blank" rel="noopener noreferrer">https://docs.qq.com/pdf/DR3NNa2xqU0Rld1B2<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，特别感谢～</li></ol></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">5/8/2023, 1:18:11 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.350eff9c.js" defer></script><script src="/assets/js/2.229db3ab.js" defer></script><script src="/assets/js/19.f783cac7.js" defer></script>
+  </body>
+</html>
